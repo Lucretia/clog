@@ -70,9 +70,9 @@ Another alternative that can be used in ```IN-PACKAGE``` that you will see frequ
 #<PACKAGE "CLOG-USER">
 ```
 
-I tend to use keywords[^4], but to each their own. Your Lisp image is your little creation.
+I tend to use keywords, but to each their own[^4]. Your Lisp image is your little creation.
 
-It is a good practice though to fully qualify IN-PACKAGE with it's home package CL. Let see why:
+It is a good practice though to fully qualify ```IN-PACKAGE``` with it's home package CL. Let see why:
 
 ```lisp
 CLOG-USER> (in-package :keyword)
@@ -90,7 +90,7 @@ CLOG-USER>
 ```
 
 
-[^4]: Using symbols to represent package names (which are strings in reality) keeps your code from "SCREAMING" at you and keywords are not affected by the current package. Using uninterned symbols works as well for this but I never got in the habit and see no need to.
+[^4]: Using symbols to represent package names (which are strings in reality) keeps your code from **SCREAMING** at you and keywords are not affected by the current package. Using uninterned symbols works as well for this but I never got in the habit and see no need to.
 
 ## Creating Packages
 
