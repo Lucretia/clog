@@ -181,8 +181,10 @@ Let's turn the bit of code we created before into a full system.
 
 
 5. Let's let ASDF recalculate the available systems - ```(asdf:clear-source-registry)``` or we can reset our lisp image using ```M-x slime-restart-inferior-lisp```.
-6. The we request QuickLisp to load our brand new system - ```(ql:quickload :hello-sys)```.
+6. The we request QuickLisp to load our brand new system:
 
+```lisp
+CL-USER> (ql:quickload :hello-sys)```
 To load "hello-sys":
   Load 1 ASDF system:
     hello-sys
@@ -190,8 +192,9 @@ To load "hello-sys":
 ..................................................
 [package hello-package]
 (:HELLO-SYS)
+```
 
-7. We can now try out our complete system:
+1. We can now try out our complete system:
 
 ```lisp
 CL-USER> (hello-pkg:hello-world)
