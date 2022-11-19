@@ -115,9 +115,9 @@ HELLO-PKG>
 
 The comments give us a play-by-play.
 
-Export is our "interface" or "protocol" to our package, ie what symbols will be available publicly in the lisp image and so accessible using the fully qualified symbol hello-package:hello-world or in any DEFPACKAGE including hello-package in its :use without needing to specify its home package, i.e. hello-package and can use just hello-world.
+Export is our _interface_ or _protocol_ to our package, i.e. what symbols will be available publicly in the lisp image and is so accessible using the fully qualified symbol ```hello-package:hello-world``` or in any ```DEFPACKAGE``` including ```hello-package``` in its ```:use``` without needing to specify its home package, i.e. ```hello-package``` and can use just ```hello-world```.
 
-Keep in mind that an export, exports the symbol. Symbols can mean many things, whatever it is now, it is publicly accessible. In Lisp, there is no strict enforcement of public and private. It is possible to access any symbol in a package by using two colons instead of one. So hello-package::hello-private would give access to the non-exported hello-private symbol.
+Keep in mind that an ```:export```, exports the symbol. Symbols can mean many things, whatever it is now, it is publicly accessible. In Lisp, there is no strict enforcement of public and private. It is possible to access any symbol in a package by using two colons instead of one, so ```hello-package::hello-private``` would give access to the non-exported hello-private symbol.
 
 Let's define two functions for the symbols we have talked about so far.
 
@@ -133,18 +133,18 @@ HELLO-PKG> (defun hello-world ()
 HELLO-WORLD
 ```
 
-Even though we haven't yet explained the details of these functions, it is clear that violating the protocol and calling the function hello-private would be a mistake, as hello-world is where the initialization is taking place. So with great power comes great responsibility.
+Even though we haven't yet explained the details of these functions, it is clear that violating the protocol and calling the function ```hello-private``` would be a mistake, as ```hello-world``` is where the initialization is taking place. So with great power comes great responsibility.
 
 ## ASDF Systems and QuickLisp
 
-Packages allow us to develop the internals of our "system", i.e. our Lisp image. ASDF and QuickLisp provide the means to make that system reproducible from outside the Lisp image.
+Packages allow us to develop the internals of our "system," i.e. our Lisp image. ASDF and QuickLisp provide the means to make that system reproducible from outside the Lisp image.
 
 ASDF allows us to define where our code is located in the real world and how to reconstruct the Lisp image from scratch. QuickLisp sits on top of ASDF and retrieves if needed over the internet any dependencies of your system and any dependencies of those dependencies. There are other options to ASDF and QuickLisp but for most needs they do an excellent job.
 
 Let's turn the bit of code we created before into a full system.
 
 1. We need to create a directory for our system in a location ASDF knows about. The directory ```~/common-lisp``` is built in and what we will use. (If using portacle portacle\projects). The directory ```~/.quicklisp/local-projects``` is also configured on many systems and you can add any directory by running in the Lisp image as well``` (push #P"path/to/dir/of/projects" ql:*local-project-directories*)```.
-2. Create the directory hello-sys in ```~/common-lisp```.
+2. Create the directory ```hello-sys``` in ```~/common-lisp```.
 3. Next we need to copy our code we typed before into a file. ```C-x C-f``` and create the file ```~/common-lisp/helllo-sys/hello.lisp``` and copy and paste to create:
 
 ```lisp
