@@ -97,6 +97,12 @@ CLOG-USER>
 Now that we can navigate our Lisp image, let's create our first package.
 
 ```lisp
+CLOG-USER> (cl:in-package :cl-user)
+#<PACKAGE "COMMON-LISP-USER">
+CL-USER>
+```
+
+```lisp
 CL-USER> (defpackage :hello-package  ; create the package
            (:nicknames :hello-pkg)   ; alternate name
            (:use :cl :clog)          ; other packages to make local
