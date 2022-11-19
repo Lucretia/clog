@@ -60,12 +60,14 @@ You can use a keyword symbol with ```IN-PACKAGE``` instead of a string and it wi
 
 ```lisp
 CLOG-USER> (in-package :clog-user)
+#<PACKAGE "CLOG-USER">
 ```
 
-Another alternative that can be used in ```IN-PACKAGE``` that you will see frequently is an uninterned symbol, i.e. a symbol that has no home package and is written #:package so the following is also valid:
+Another alternative that can be used in ```IN-PACKAGE``` that you will see frequently is an _uninterned_ symbol, i.e. a symbol that has no home package and is written ```#:package``` so the following is also valid:
 
 ```lisp
 (in-package #:clog-user)
+#<PACKAGE "CLOG-USER">
 ```
 
 I tend to use keywords[^4], but to each their own. Your Lisp image is your little creation.
