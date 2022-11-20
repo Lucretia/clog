@@ -25,7 +25,7 @@ Common Lisp is not like most languages you may have used[^5]:
 
 Instead your editor (emacs in our case) is plugged in via slime (sort of like an umbilical cord) to a living breathing Lisp image containing your tools (sbcl the compiler, CLOG Builder, etc) and your code as you grow it. It is an organic process. When it comes time to deliver an executable (your baby) you ```save-lisp-and-die```[^6].
 
-This system of development is far faster and certainly a lot more fun. You get to see results immediately and experiment on the spot. You can enter your code in one of two places to inject the imageith, either in the REPL or in text files that you read into the REPL.
+This system of development is far faster and certainly a lot more fun. You get to see results immediately and experiment on the spot. You can enter your code in one of two places to inject the image, either in the REPL or in text files that you read into the REPL.
 
 The REPL (read–eval–print loop) is in many ways similar to an operating system's shell, so much so that there are Lisp alternatives for the shell[^7]. In Lisp it is possible to write code that directly affects how code is read, how it is evaluated, and how the results are returned to you. All of that is beyond our journey.
 
